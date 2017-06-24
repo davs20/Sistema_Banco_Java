@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cafb832-2134-4841-8bb8-bc96791926e7" name="Default" comment="p">
+    <list default="true" id="5cafb832-2134-4841-8bb8-bc96791926e7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/delcid/Cuenta.java" afterPath="$PROJECT_DIR$/src/com/delcid/Cuenta.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/delcid/Main.java" afterPath="$PROJECT_DIR$/src/com/delcid/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,8 +22,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/delcid/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="111" column="46" lean-forward="true" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="46" />
+            <state relative-caret-position="119">
+              <caret line="104" column="46" lean-forward="true" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -438,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498336247122</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="si el nuemero de identidad o el numero de cuenta no coinciden !">
+      <created>1498337478918</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1498337478918</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -568,7 +574,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Como le mando una funcion con return a retirar, al poner get posicion no tomaba el valor correcto pues getposicion tomaba valor de la funcion buscar y al hacer referencia directa me impedia obtener un valor correcto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Como le mando una funcion con return a retirar, al poner get posicion no tomaba el valor correcto pues getposicion tomaba valor de la funcion buscar y al hacer referencia directa me impedia obtener un valor correcto" />
+    <MESSAGE value="si el nuemero de identidad o el numero de cuenta no coinciden !" />
+    <option name="LAST_COMMIT_MESSAGE" value="si el nuemero de identidad o el numero de cuenta no coinciden !" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1007,8 +1014,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/delcid/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="111" column="46" lean-forward="true" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="46" />
+        <state relative-caret-position="119">
+          <caret line="104" column="46" lean-forward="true" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
