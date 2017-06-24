@@ -90,7 +90,7 @@ public class Main {
                     break;
                 case 4:
                     Cuenta retiro = new Cuenta();
-                    System.out.println("Ingrese el numero de cuenta del cliente");
+                    System.out.println("Ingrese el numero de cuenta");
                     dest = lector.next();
                     System.out.println("Ingrese el numero de identidad del Cliente");
                     id=lector.next();

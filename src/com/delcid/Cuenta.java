@@ -15,9 +15,9 @@ public class Cuenta {
     protected double monto;
     static public ArrayList<Cuenta> cuenta = new ArrayList<>();
     protected int posicion;
-    protected String Cuenta;
+    private String Cuenta;
     protected int tipocuenta;
-    protected String id;
+    private String id;
 
     public int getPosicion() {
         return posicion;
@@ -38,7 +38,7 @@ public class Cuenta {
         this.id = id;
     }
 
-    public void setcuenta(int tipocuenta) {
+    protected void setcuenta(int tipocuenta) {
         Calendar fechasetcuenta = new GregorianCalendar();
         Cuenta = fechasetcuenta.get(Calendar.DAY_OF_MONTH) + "-" + fechasetcuenta.get(Calendar.MONTH) + "-" + fechasetcuenta.get(Calendar.YEAR) + "-" + rnd.nextInt(54456) + "-" + tipocuenta;
         accion += " Creacion de la  Cuenta " + Cuenta + fechasetcuenta.get(Calendar.DAY_OF_MONTH) + "/" + fechasetcuenta.get(Calendar.MONTH) + "/" + fechasetcuenta.get(Calendar.YEAR) + " " + fechasetcuenta.get(Calendar.HOUR_OF_DAY) + ":" + fechasetcuenta.get(Calendar.MINUTE) + "\n";
@@ -93,6 +93,21 @@ public class Cuenta {
                 }
             }
         }
+        return getPosicion();
+    }
+
+    public int buscarid(String id) {
+        Calendar fechabusqueda = new GregorianCalendar();
+        setPosicion(-1);
+        if (Cliente.registro.size() > 0) {
+            for (int e = 0; e < Cliente.registro.size(); e++) {
+                if (Cliente.registro.get(e).getId().equals(id)) {
+                    setPosicion(e);
+                    return getPosicion();
+                }
+            }
+        }
+
         return getPosicion();
     }
 
