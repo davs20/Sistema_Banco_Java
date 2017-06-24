@@ -96,10 +96,10 @@ public class Main {
                     id=lector.next();
                     System.out.println("Ingrese el Monto a Retirar");
                     Double mont = lector.nextDouble();
-                    if (retiro.buscarcuenta(dest) == -1 || retiro.buscarid(id)==-1) {
+                    if (retiro.buscarcuentaid(dest,id) == -1) {
                         System.out.println("El numero de cuenta que has ingresado no existe o no eres dueno de la cuenta");
                     } else {
-                        retiro.Retirar(mont, retiro.buscarcuenta(dest));
+                        retiro.Retirar(mont, retiro.buscarcuentaid(dest,id));
                     }
                     menu();
                     opcion = lector.nextInt();

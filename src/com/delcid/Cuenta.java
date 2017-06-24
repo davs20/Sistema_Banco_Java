@@ -77,7 +77,6 @@ public class Cuenta {
         accion += "Retirar de la cuenta" + Cliente.cuenta.get(posicion).getcuenta() + " " + Cliente.cuenta.get(posicion).getcuenta() + " " + fecharetirar.get(Calendar.DAY_OF_MONTH) + "/" + fecharetirar.get(Calendar.MONTH) + "/" + fecharetirar.get(Calendar.YEAR) + " " + fecharetirar.get(Calendar.HOUR_OF_DAY) + ":" + fecharetirar.get(Calendar.MINUTE) + "\n";
         double a = Cliente.cuenta.get(posicion).getBalance();
         Cliente.cuenta.get(posicion).setBalance(a - ret);
-
     }
 
     public int buscarcuenta(String numerocuenta) {
@@ -85,7 +84,7 @@ public class Cuenta {
         setPosicion(-1);
         if (Cliente.cuenta.size() > 0) {
             for (int i = 0; i < Cliente.cuenta.size(); i++) {
-                if (Cliente.cuenta.get(i).getcuenta().equals(numerocuenta)) {
+                if (Cliente.cuenta.get(i).getcuenta().equals(numerocuenta) && Cliente.cuenta.get(i).getId().equals(id)) {
 
                     setPosicion(i);
                     accion += "Buscar Cuenta  " + numerocuenta + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
@@ -96,13 +95,15 @@ public class Cuenta {
         return getPosicion();
     }
 
-    public int buscarid(String id) {
+    public int buscarcuentaid(String numerocuenta,String id) {
         Calendar fechabusqueda = new GregorianCalendar();
         setPosicion(-1);
-        if (Cliente.registro.size() > 0) {
-            for (int e = 0; e < Cliente.registro.size(); e++) {
-                if (Cliente.registro.get(e).getId().equals(id)) {
-                    setPosicion(e);
+        if (Cliente.cuenta.size() > 0) {
+            for (int i = 0; i < Cliente.cuenta.size(); i++) {
+                if (Cliente.cuenta.get(i).getcuenta().equals(numerocuenta) && Cliente.cuenta.get(i).getId().equals(id)) {
+
+                    setPosicion(i);
+                    accion += "Buscar Cuenta  " + numerocuenta + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
                     return getPosicion();
                 }
             }
