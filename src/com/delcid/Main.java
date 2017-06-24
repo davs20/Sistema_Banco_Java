@@ -96,8 +96,8 @@ public class Main {
                     id=lector.next();
                     System.out.println("Ingrese el Monto a Retirar");
                     Double mont = lector.nextDouble();
-                    if (retiro.buscarcuenta(dest) == -1) {
-                        System.out.println("El numero de cuenta que has ingresado no existe");
+                    if (retiro.buscarcuenta(dest) == -1 || retiro.buscarcuenta(id)==-1) {
+                        System.out.println("El numero de cuenta que has ingresado no existe o no eres dueno de la cuenta");
                     } else {
                         retiro.Retirar(mont, retiro.buscarcuenta(dest));
                     }

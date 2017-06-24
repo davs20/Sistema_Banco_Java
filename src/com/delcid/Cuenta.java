@@ -107,7 +107,6 @@ public class Cuenta {
                 }
             }
         }
-
         return getPosicion();
     }
 
