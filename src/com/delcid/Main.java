@@ -36,7 +36,7 @@ public class Main {
 
         int opcion = lector.nextInt();
         String dest;
-        String da;
+        String id;
         while (condicion == TRUE) {
             switch (opcion) {
                 case 1:
@@ -90,9 +90,9 @@ public class Main {
                     break;
                 case 4:
                     Cuenta retiro = new Cuenta();
-                    System.out.println("Ingrese su numero de cuenta");
+                    System.out.println("Ingrese el numero de cuenta del cliente");
                     dest = lector.next();
-                    System.out.println("Ingrese su numero de identidad");
+                    System.out.println("Ingrese el numero de identidad del Cliente");
                     id=lector.next();
                     System.out.println("Ingrese el Monto a Retirar");
                     Double mont = lector.nextDouble();
