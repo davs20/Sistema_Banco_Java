@@ -4,6 +4,7 @@
     <list default="true" id="5cafb832-2134-4841-8bb8-bc96791926e7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/delcid/Cuenta.java" afterPath="$PROJECT_DIR$/src/com/delcid/Cuenta.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/delcid/Cuenta_Largo_Plazo.java" afterPath="$PROJECT_DIR$/src/com/delcid/Cuenta_Largo_Plazo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/delcid/Main.java" afterPath="$PROJECT_DIR$/src/com/delcid/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,8 +24,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/delcid/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="95" column="37" lean-forward="true" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
+            <state relative-caret-position="17">
+              <caret line="50" column="55" lean-forward="true" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,8 +36,8 @@
       <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/delcid/Cliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="238">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#738#739#0" expanded="true" />
@@ -71,10 +72,12 @@
       <file leaf-file-name="Cuenta.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/delcid/Cuenta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+            <state relative-caret-position="266">
+              <caret line="123" column="40" lean-forward="false" selection-start-line="123" selection-start-column="40" selection-end-line="123" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1395#1396#0" expanded="true" />
+                <element signature="e#1428#1429#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,8 +86,8 @@
       <file leaf-file-name="Cuenta_Largo_Plazo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/delcid/Cuenta_Largo_Plazo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+            <state relative-caret-position="170">
+              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,9 +122,9 @@
         <option value="$PROJECT_DIR$/src/com/aragon/Cuenta_Normal.java" />
         <option value="$PROJECT_DIR$/src/com/aragon/Cuenta_Largo_Plazo.java" />
         <option value="$PROJECT_DIR$/src/com/delcid/Bitacora.java" />
-        <option value="$PROJECT_DIR$/src/com/delcid/Cuenta_Largo_Plazo.java" />
         <option value="$PROJECT_DIR$/src/com/delcid/Cuenta_Normal.java" />
         <option value="$PROJECT_DIR$/src/com/delcid/Cliente.java" />
+        <option value="$PROJECT_DIR$/src/com/delcid/Cuenta_Largo_Plazo.java" />
         <option value="$PROJECT_DIR$/src/com/delcid/Cuenta.java" />
         <option value="$PROJECT_DIR$/src/com/delcid/Main.java" />
       </list>
@@ -454,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498337636406</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Modulo de Retiros Completamente Correjido">
+      <created>1498340254435</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1498340254435</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -586,7 +596,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Como le mando una funcion con return a retirar, al poner get posicion no tomaba el valor correcto pues getposicion tomaba valor de la funcion buscar y al hacer referencia directa me impedia obtener un valor correcto" />
     <MESSAGE value="si el nuemero de identidad o el numero de cuenta no coinciden !" />
-    <option name="LAST_COMMIT_MESSAGE" value="si el nuemero de identidad o el numero de cuenta no coinciden !" />
+    <MESSAGE value="Modulo de Retiros Completamente Correjido" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modulo de Retiros Completamente Correjido" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -623,6 +634,8 @@
           <caret line="82" column="56" lean-forward="true" selection-start-line="82" selection-start-column="56" selection-end-line="82" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -683,6 +696,8 @@
           <caret line="55" column="8" lean-forward="false" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -731,6 +746,8 @@
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -803,6 +820,8 @@
           <caret line="49" column="23" lean-forward="false" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -863,6 +882,8 @@
           <caret line="49" column="23" lean-forward="false" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -933,6 +954,8 @@
           <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -973,16 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/delcid/Cuenta_Largo_Plazo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/delcid/Cuenta_Normal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1015,8 +1028,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/delcid/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="238">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#738#739#0" expanded="true" />
@@ -1027,8 +1040,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/delcid/Cuenta.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+        <state relative-caret-position="266">
+          <caret line="123" column="40" lean-forward="false" selection-start-line="123" selection-start-column="40" selection-end-line="123" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/delcid/Cuenta_Largo_Plazo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1037,8 +1062,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/delcid/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="95" column="37" lean-forward="true" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
+        <state relative-caret-position="17">
+          <caret line="50" column="55" lean-forward="true" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

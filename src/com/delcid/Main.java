@@ -19,14 +19,14 @@ public class Main {
 
 
     public static void menu() {
-        System.out.println("-----------------------MENU--------");
-        System.out.println("1-------------Registro de Cliente-----------------");
-        System.out.println("2-------Registrar Cuentas en Clientes Existentes");
-        System.out.println("3-------------------Depositar----------------------");
+        System.out.println("----------------------MENU---------------------------");
+        System.out.println("1---------------Registro de Cliente------------------");
+        System.out.println("2-------Registrar Cuentas en Clientes Existentes-----");
+        System.out.println("3-------------------Depositar------------------------");
         System.out.println("4-------------------Retirar--------------------------");
         System.out.println("5-------------------Bitacora-------------------------");
         System.out.println("6---------------------Salir--------------------------");
-        System.out.println("----------------Elija Una Opcion:---------------------");
+        System.out.println("----------------Elija Una Opcion:--------------------");
     }
 
     public static void main(String[] args) {
@@ -68,9 +68,9 @@ public class Main {
                     opcion = lector.nextInt();
                     break;
                 case 2:
+                    Cuenta buscarcliete= new Cuenta();
                     System.out.println("Ingrese el numero de identidad del Cliente");
-                    lector.next();
-
+                    id=lector.next();
 
                     break;
                 case 3:
@@ -93,13 +93,17 @@ public class Main {
                     System.out.println("Ingrese el numero de cuenta");
                     dest = lector.next();
                     System.out.println("Ingrese el numero de identidad del Cliente");
-                    id=lector.next();
+                    id = lector.next();
                     System.out.println("Ingrese el Monto a Retirar");
                     Double mont = lector.nextDouble();
-                    if (retiro.buscarcuentaid(dest,id) == -1) {
+                    if (retiro.buscarcuentaid(dest, id) == -1) {
                         System.out.println("El numero de cuenta que has ingresado no existe o no eres dueno de la cuenta");
                     } else {
-                        retiro.Retirar(mont, retiro.buscarcuentaid(dest,id));
+                        if(retiro.buscartipo(dest)==2){
+
+                        }
+                        retiro.Retirar(mont, retiro.buscarcuentaid(dest, id));
+
                     }
                     menu();
                     opcion = lector.nextInt();
