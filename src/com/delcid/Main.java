@@ -13,9 +13,41 @@ import static java.lang.Boolean.TRUE;
 import static com.delcid.Bitacora.accion;
 
 public class Main {
-    public int opcion;
+    public static int opcion;
     public static boolean condicion = TRUE;
 
+    public static void condicionnuevacuenta(Scanner lector, String id, int condicion) {
+        int opcionswitch = 0;
+        Cliente buscar = new Cliente();
+        if (condicion == 2 && buscar.posicionclienteid(id) == -1) {
+            opcionswitch = 3;
+        } else {
+            System.out.println("Tipo De Cuenta");
+            System.out.println("1. Cuenta Normal--");
+            System.out.println("2. Cuenta A largo Plazo");
+        }
+        if (condicion == 1 || (condicion == 2 && buscar.posicionclienteid(id) > -1)) opcionswitch = lector.nextInt();
+        switch (opcionswitch) {
+            case 1:
+                System.out.println("Ingrese la cantidad de apertura");
+                Cuenta_Normal nuevanormal = new Cuenta_Normal(lector.nextDouble());
+                nuevanormal.setId(id);
+                nuevanormal.guardard(nuevanormal);
+                break;
+            case 2:
+                System.out.println("Ingrese la cantidad de apertura");
+                Cuenta_Largo_Plazo nuevalargoplazo = new Cuenta_Largo_Plazo();
+                nuevalargoplazo.Cuenta_Largo(lector.nextDouble());
+                nuevalargoplazo.setId(id);
+                nuevalargoplazo.guardar(nuevalargoplazo);
+                break;
+            default:
+                System.out.println("Opcion Invalida o Cliente no Encontrado");
+                break;
+
+        }
+
+    }
 
     public static void menu() {
         System.out.println("----------------------MENU---------------------------");
@@ -30,76 +62,58 @@ public class Main {
     public static void main(String[] args) {
         String dest;
         String id;
+        int opcion;
+        int opcioncuentas;
         Double mont;
         String nombredepositente;
         Scanner lector = new Scanner(System.in);
         java.util.Date fecha = new Date();
         menu();
-        int opcion = lector.nextInt();
+        opcion = lector.nextInt();
         while (condicion == TRUE) {
             switch (opcion) {
                 case 1:
-                    System.out.println("jkjk");
-                    Cliente nuevo_cliente = new Cliente();
-                    System.out.println("Ingrese el Nombre");
-                    nuevo_cliente.setNombre(lector.next());
-                    System.out.println("Ingrese el Correo Electronico");
-                    nuevo_cliente.setCorreo(lector.next());
-                    System.out.println("Ingrese el Numero de Telefono");
-                    nuevo_cliente.setTelefono(lector.next());
-                    System.out.println("Ingrese el Numero de Identidad");
-                    nuevo_cliente.setId(lector.next());
-                    nuevo_cliente.guardar_cliente(nuevo_cliente);
-                    System.out.println("Tipo De Cuenta");
-                    System.out.println("1. Cuenta Normal--");
-                    System.out.println("2. Cuenta A largo Plazo");
-                    switch (lector.nextInt()) {
+                    System.out.println("1.Agregar Cuentas a Nuevos Clientes");
+                    System.out.println("2.Agregar Cuentas a Clientes Existentes");
+                    opcioncuentas = lector.nextInt();
+                    switch (opcioncuentas) {
                         case 1:
-                            System.out.println("Ingrese la cantidad de apertura");
-                            Cuenta_Normal nuevanormal = new Cuenta_Normal(lector.nextDouble());
-                            nuevanormal.setId(nuevo_cliente.getId());
-                            nuevanormal.guardard(nuevanormal);
-                            menu();
-                            opcion = lector.nextInt();
+                            Cliente nuevo_cliente = new Cliente();
+                            System.out.println("Ingrese el Nombre");
+                            nuevo_cliente.setNombre(lector.next());
+                            System.out.println("Ingrese el Correo Electronico");
+                            nuevo_cliente.setCorreo(lector.next());
+                            System.out.println("Ingrese el Numero de Telefono");
+                            nuevo_cliente.setTelefono(lector.next());
+                            System.out.println("Ingrese el Numero de Identidad");
+                            nuevo_cliente.setId(lector.next());
+                            nuevo_cliente.guardar_cliente(nuevo_cliente);
+                            condicionnuevacuenta(lector, nuevo_cliente.getId(), 1);
                             break;
                         case 2:
-                            System.out.println("Ingrese la cantidad de apertura");
-                            Cuenta_Largo_Plazo nuevalargoplazo = new Cuenta_Largo_Plazo();
-                            nuevalargoplazo.Cuenta_Largo(lector.nextDouble());
-                            nuevalargoplazo.setId(nuevo_cliente.getId());
-                            nuevalargoplazo.guardar(nuevalargoplazo);
-                            menu();
-                            opcion = lector.nextInt();
+                            System.out.println("Ingrese el numero de indentidad");
+                            String ida = lector.next();
+                            condicionnuevacuenta(lector, ida, 2);
                             break;
-                        default:
-                            System.out.println("Has Ingresado una opcion Invalida intenta den nuevo 1, regresar al menu princiooal 2");
-                            opcion = 1;
-                            break;
-
                     }
-
+                    menu();
+                    opcion = lector.nextInt();
                     break;
                 case 2:
-                    Cuenta buscarcliete = new Cuenta();
-                    System.out.println("Ingrese el numero de identidad del Cliente");
-                    id = lector.next();
-                    break;
-                case 3:
                     Cuenta deposito = new Cuenta();
-
                     System.out.println("Ingrese el numero de cuenta del destinatario");
                     dest = lector.next();
                     System.out.println("Ingrese el nombre ...");
-                     nombredepositente=lector.next();
-                     System.out.println(deposito.buscarcuenta(dest));
+                    nombredepositente = lector.next();
+                    System.out.println(deposito.buscarcuenta(dest));
                     if (deposito.buscarcuenta(dest) > -1) {
-                        Cliente busquedacliente=new Cliente();
+                        Cliente busquedacliente = new Cliente();
                         System.out.println("Ingrese el Monto a Depositar");
-                        mont=lector.nextDouble();
+                        mont = lector.nextDouble();
                         deposito.Depositar(mont, deposito.buscarcuenta(dest));
                         System.out.println("Transaccion Exitosa!");
                         System.out.println("---------Depositante-------Cuenta Receptor--------Nombre Receptor---------Deposito-----");
-                        System.out.println("   "+nombredepositente+"                "+dest+"      "+Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre()+"        "+mont);
+                        System.out.println("   " + nombredepositente + "                " + dest + "      " + Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre() + "        " + mont);
                         menu();
                         opcion = lector.nextInt();
                     } else {
@@ -107,7 +121,7 @@ public class Main {
                         opcion = 3;
                     }
                     break;
-                case 4:
+                case 3:
                     Cuenta retiro = new Cuenta();
                     System.out.println("Ingrese el numero de cuenta");
                     dest = lector.next();
@@ -126,7 +140,7 @@ public class Main {
                     menu();
                     opcion = lector.nextInt();
                     break;
-                case 5:
+                case 4:
                     System.out.println("---Cuenta---    ----Cliente----     ----Balance-----");
                     Cuenta mostrar = new Cuenta();
                     System.out.println(mostrar());
@@ -134,7 +148,7 @@ public class Main {
                     menu();
                     opcion = lector.nextInt();
                     break;
-                case 6:
+                case 5:
                     condicion = FALSE;
                     break;
 

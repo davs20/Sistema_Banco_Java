@@ -83,7 +83,21 @@ public class Cliente {
         setPosicion(-1);
         for (int a = 0; a < registro.size(); a++) {
 
-            if (registro.get(a).getId().equals("0101199702515")) {
+            if (registro.get(a).getId().equals(buscarcliente(cuenta))) {
+                // accion += "Cliente Cuenta con numero de Cuenta " + cuenta + Cliente.registro.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
+
+                setPosicion(a);
+                return getPosicion();
+            }
+        }
+        return getPosicion();
+    }
+    public int posicionclienteid(String id) {
+        Calendar fechabusqueda = new GregorianCalendar();
+        setPosicion(-1);
+        for (int a = 0; a < registro.size(); a++) {
+
+            if (registro.get(a).getId().equals(id)) {
                 // accion += "Cliente Cuenta con numero de Cuenta " + cuenta + Cliente.registro.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
 
                 setPosicion(a);
