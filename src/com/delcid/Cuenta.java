@@ -113,16 +113,18 @@ public class Cuenta {
 
     public int buscartipo(String numerocuenta) {
         Calendar fechabusqueda = new GregorianCalendar();
-        int re=-1;
-        for (int i = 0; i < Cliente.cuenta.size(); i++) {
-                if (Cliente.cuenta.get(i).getcuenta().equals(numerocuenta)) {
-                    accion += "Buscar Cuenta  " + numerocuenta + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
-                    re=i;
-                    return cuenta.get(i).getTipocuenta();
-                }
+        int re = -1;
+        int i;
+        for (i = 0; i < Cliente.cuenta.size(); i++) {
+            if (Cliente.cuenta.get(i).getcuenta().equals(numerocuenta)) {
+                accion += "Buscar Cuenta  " + numerocuenta + Cliente.cuenta.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
+                re = i;
+                return Cliente.cuenta.get(re).getTipocuenta();
             }
-            return  cuenta.get(re).getTipocuenta();
+        }
+        return Cliente.cuenta.get(re).getTipocuenta();
     }
+
 
     public static String mostrar() {
         String mensaje = "";

@@ -60,7 +60,8 @@ public class Main {
                         guardard(nuevanormal);
                     } else if (tipocuenta == 2) {
                         System.out.println("Ingrese la cantidad de apertura");
-                        Cuenta_Largo_Plazo nuevalargoplazo = new Cuenta_Largo_Plazo(lector.nextDouble());
+                        Cuenta_Largo_Plazo nuevalargoplazo = new Cuenta_Largo_Plazo();
+                        nuevalargoplazo.Cuenta_Largo(lector.nextDouble());
                         nuevalargoplazo.setId(nuevo_cliente.getId());
                         guardar(nuevalargoplazo);
                     }
@@ -68,9 +69,9 @@ public class Main {
                     opcion = lector.nextInt();
                     break;
                 case 2:
-                    Cuenta buscarcliete= new Cuenta();
+                    Cuenta buscarcliete = new Cuenta();
                     System.out.println("Ingrese el numero de identidad del Cliente");
-                    id=lector.next();
+                    id = lector.next();
 
                     break;
                 case 3:
@@ -99,11 +100,12 @@ public class Main {
                     if (retiro.buscarcuentaid(dest, id) == -1) {
                         System.out.println("El numero de cuenta que has ingresado no existe o no eres dueno de la cuenta");
                     } else {
-                        if(retiro.buscartipo(dest)==2){
-
+                        if (retiro.buscartipo(dest) == 2) {
+                             Cuenta_Largo_Plazo largo =new Cuenta_Largo_Plazo();
+                            largo.Retirar(mont, retiro.buscarcuentaid(dest, id));
+                        } else {
+                            retiro.Retirar(mont, retiro.buscarcuentaid(dest, id));
                         }
-                        retiro.Retirar(mont, retiro.buscarcuentaid(dest, id));
-
                     }
                     menu();
                     opcion = lector.nextInt();
