@@ -79,12 +79,12 @@ public class Cuenta {
         Cliente.cuenta.get(posicion).setBalance(a - ret);
     }
 
-    public int buscarcuenta(String numerocuenta) {
+    public  int buscarcuenta(String numerocuenta) {
         Calendar fechabusqueda = new GregorianCalendar();
         setPosicion(-1);
         if (Cliente.cuenta.size() > 0) {
             for (int i = 0; i < Cliente.cuenta.size(); i++) {
-                if (Cliente.cuenta.get(i).getcuenta().equals(numerocuenta) && Cliente.cuenta.get(i).getId().equals(id)) {
+                if (Cliente.cuenta.get(i).getcuenta().equals(numerocuenta)) {
 
                     setPosicion(i);
                     accion += "Buscar Cuenta  " + numerocuenta + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
@@ -114,12 +114,11 @@ public class Cuenta {
     public int buscartipo(String numerocuenta) {
         Calendar fechabusqueda = new GregorianCalendar();
         int re = -1;
-        int i;
-        for (i = 0; i < Cliente.cuenta.size(); i++) {
+        for (int i = 0; i < Cliente.cuenta.size(); i++) {
             if (Cliente.cuenta.get(i).getcuenta().equals(numerocuenta)) {
                 accion += "Buscar Cuenta  " + numerocuenta + Cliente.cuenta.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
                 re = i;
-                return Cliente.cuenta.get(re).getTipocuenta();
+                return Cliente.cuenta.get(i).getTipocuenta();
             }
         }
         return Cliente.cuenta.get(re).getTipocuenta();
@@ -140,5 +139,4 @@ public class Cuenta {
             return mensaje;
         }
     }
-
 }

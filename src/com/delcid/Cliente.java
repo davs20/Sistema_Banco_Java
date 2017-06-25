@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import static com.delcid.Bitacora.accion;
+
 /**
  * Created by NEHEMIAS on 21/06/2017.
  */
@@ -15,9 +16,11 @@ public class Cliente {
     private String id;
     private String telefono;
     private String correo;
+    private int posicion;
     private DateTimeException fecha_nacimieto;
-    public static ArrayList<Cliente> registro=new ArrayList<>();
-    static  public ArrayList<Cuenta> cuenta = new ArrayList<>();
+    static public ArrayList<Cliente> registro = new ArrayList<>();
+    static public ArrayList<Cuenta> cuenta = new ArrayList<>();
+
     public String getNombre() {
         return nombre;
     }
@@ -28,6 +31,14 @@ public class Cliente {
 
     public String getId() {
         return id;
+    }
+
+    public int getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(int posicion) {
+        this.posicion = posicion;
     }
 
     public void setId(String id) {
@@ -58,18 +69,50 @@ public class Cliente {
         this.fecha_nacimieto = fecha_nacimieto;
     }
 
-    public  void guardar_cliente(Cliente cliente){
+    public  void guardar_cliente(Cliente cliente) {
 
         Calendar fechaguardarcliente = new GregorianCalendar();
-        accion+="Guardar Cliente"+ fechaguardarcliente.get(Calendar.DAY_OF_MONTH) + "/" + fechaguardarcliente.get(Calendar.MONTH) + "+" + fechaguardarcliente.get(Calendar.YEAR) + " " + fechaguardarcliente.get(Calendar.HOUR_OF_DAY) + ":" + fechaguardarcliente.get(Calendar.MINUTE)+"\n";;
-        this.registro.add(cliente);
-        Bitacora bitacora =new Bitacora();
-
+        accion += "Guardar Cliente" + fechaguardarcliente.get(Calendar.DAY_OF_MONTH) + "/" + fechaguardarcliente.get(Calendar.MONTH) + "+" + fechaguardarcliente.get(Calendar.YEAR) + " " + fechaguardarcliente.get(Calendar.HOUR_OF_DAY) + ":" + fechaguardarcliente.get(Calendar.MINUTE) + "\n";
+        registro.add(cliente);
+        Bitacora bitacora = new Bitacora();
 
     }
-    public  void mostrat(Cliente cliente){
-        Calendar fechamostrarcliente = new GregorianCalendar();
-        accion+="Mostrar Clientes"+ fechamostrarcliente.get(Calendar.DAY_OF_MONTH) + "/" + fechamostrarcliente.get(Calendar.MONTH) + "+" + fechamostrarcliente.get(Calendar.YEAR) + " " + fechamostrarcliente.get(Calendar.HOUR_OF_DAY) + ":" + fechamostrarcliente.get(Calendar.MINUTE)+"\n";;
 
+    public int posicioncliente(String cuenta) {
+        Calendar fechabusqueda = new GregorianCalendar();
+        setPosicion(-1);
+        for (int a = 0; a < registro.size(); a++) {
+
+            if (registro.get(a).getId().equals("0101199702515")) {
+                // accion += "Cliente Cuenta con numero de Cuenta " + cuenta + Cliente.registro.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
+
+                setPosicion(a);
+                return getPosicion();
+            }
+        }
+        return getPosicion();
+    }
+
+    public String buscarcliente(String cuenta) {
+        Calendar fechamostrarcliente = new GregorianCalendar();
+        int re = -1;
+        for (int i = 0; i < Cliente.cuenta.size(); i++) {
+            if (Cliente.cuenta.get(i).getcuenta().equals(cuenta)) {
+                // accion += "Cliente Cuenta con numero de Cuenta " + cuenta + Cliente.cuenta.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
+                re = i;
+                return Cliente.cuenta.get(i).getId();
+            }
+        }
+        return Cliente.cuenta.get(re).getId();
+    }
+
+    public static void mostrarcliente() {
+        String cadena="";
+        Calendar fechamostrarcliente = new GregorianCalendar();
+        accion += "Mostrar Clientes" + fechamostrarcliente.get(Calendar.DAY_OF_MONTH) + "/" + fechamostrarcliente.get(Calendar.MONTH) + "+" + fechamostrarcliente.get(Calendar.YEAR) + " " + fechamostrarcliente.get(Calendar.HOUR_OF_DAY) + ":" + fechamostrarcliente.get(Calendar.MINUTE) + "\n";
+        for (int c=0;c<Cliente.registro.size();c++){
+            cadena+=Cliente.registro.get(c).getNombre()+"\n";
+        }
+        System.out.println(cadena);
     }
 }

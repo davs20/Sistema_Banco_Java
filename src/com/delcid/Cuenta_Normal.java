@@ -19,7 +19,7 @@ public class Cuenta_Normal extends Cuenta {
         setcuenta(tipocuenta);
     }
 
-    public static void guardard(Cuenta_Normal cuenta){
+    public  void guardard(Cuenta_Normal cuenta){
         Calendar fechaguardarcuentaN = new GregorianCalendar();
         accion+="Guardar Cuenta Normal "+cuenta.getcuenta()+"Perteneciente"+cuenta.getId()+" "+ fechaguardarcuentaN .get(Calendar.DAY_OF_MONTH) + "/" + fechaguardarcuentaN.get(Calendar.MONTH) + "+" + fechaguardarcuentaN.get(Calendar.YEAR) + " " + fechaguardarcuentaN .get(Calendar.HOUR_OF_DAY) + ":" + fechaguardarcuentaN .get(Calendar.MINUTE)+"\n";
 
