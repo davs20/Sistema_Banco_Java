@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5cafb832-2134-4841-8bb8-bc96791926e7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/delcid/Cliente.java" afterPath="$PROJECT_DIR$/src/com/delcid/Cliente.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/delcid/Cuenta.java" afterPath="$PROJECT_DIR$/src/com/delcid/Cuenta.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/delcid/Cuenta_Largo_Plazo.java" afterPath="$PROJECT_DIR$/src/com/delcid/Cuenta_Largo_Plazo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/delcid/Cuenta_Normal.java" afterPath="$PROJECT_DIR$/src/com/delcid/Cuenta_Normal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/delcid/Main.java" afterPath="$PROJECT_DIR$/src/com/delcid/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -486,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498349818272</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="modulo retirar correjido ahora se ve el nombre del depositante y los datos del que recibe el dinero.">
+      <created>1498416639938</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1498416639938</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -500,7 +502,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -511,8 +512,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39964476" sideWeight="0.50323623" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.48913044" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3463588" sideWeight="0.4935275" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285968" sideWeight="0.49676377" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3463588" sideWeight="0.4935275" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3285968" sideWeight="0.49676377" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285968" sideWeight="0.49676377" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -621,7 +622,8 @@
     <MESSAGE value="Modulo de Retiros Completamente Correjido" />
     <MESSAGE value="Ya esta planteado el modulo para agregar cuentas a usuarios existentes solo falta terminar la condicion" />
     <MESSAGE value="Correccion del Modulo de Retiros, ahora completamente funcional!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correccion del Modulo de Retiros, ahora completamente funcional!!!!" />
+    <MESSAGE value="modulo retirar correjido ahora se ve el nombre del depositante y los datos del que recibe el dinero." />
+    <option name="LAST_COMMIT_MESSAGE" value="modulo retirar correjido ahora se ve el nombre del depositante y los datos del que recibe el dinero." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
