@@ -52,10 +52,10 @@ public class Main {
     public static void menu() {
         System.out.println("----------------------MENU---------------------------");
         System.out.println("1---------------Agregar Cuentas----------------------");
-        System.out.println("3-------------------Depositar------------------------");
-        System.out.println("4-------------------Retirar--------------------------");
-        System.out.println("5-------------------Bitacora-------------------------");
-        System.out.println("6---------------------Salir--------------------------");
+        System.out.println("2-------------------Depositar------------------------");
+        System.out.println("3-------------------Retirar--------------------------");
+        System.out.println("4-------------------Bitacora-------------------------");
+        System.out.println("5---------------------Salir--------------------------");
         System.out.println("----------------Elija Una Opcion:--------------------");
     }
 
