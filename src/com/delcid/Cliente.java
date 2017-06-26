@@ -106,6 +106,7 @@ public class Cliente {
 
     public String buscarcliente(String cuenta) {
         Calendar fechamostrarcliente = new GregorianCalendar();
+
         int re = -1;
         for (int i = 0; i < Cliente.cuenta.size(); i++) {
             if (Cliente.cuenta.get(i).getcuenta().equals(cuenta)) {

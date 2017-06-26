@@ -1,17 +1,8 @@
 package com.delcid;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Scanner;
-
-
 import static com.delcid.Cuenta.*;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
-
-import static com.delcid.Bitacora.accion;
-
 public class Main {
 
     public static int opcion;
@@ -24,7 +15,7 @@ public class Main {
             opcionswitch = 3;
         } else {
             System.out.println("Tipo De Cuenta");
-            System.out.println("1.''' Cuenta Normal--");
+            System.out.println("1.Cuenta Normal--");
             System.out.println("2. Cuenta A largo Plazo");
         }
         if (condicion == 1 || (condicion == 2 && buscar.posicionclienteid(id) > -1)) opcionswitch = lector.nextInt();
@@ -34,6 +25,7 @@ public class Main {
                 Cuenta_Normal nuevanormal = new Cuenta_Normal(lector.nextDouble());
                 nuevanormal.setId(id);
                 nuevanormal.guardar(nuevanormal);
+                Cuenta.mostrarceuntaindividual(nuevanormal);
                 break;
             case 2:
                 System.out.println("Ingrese la cantidad de apertura");
@@ -41,13 +33,13 @@ public class Main {
                 nuevalargoplazo.Cuenta_Largo(lector.nextDouble());
                 nuevalargoplazo.setId(id);
                 nuevalargoplazo.guardar(nuevalargoplazo);
+                Cuenta.mostrarceuntaindividual(nuevalargoplazo);
                 break;
             default:
                 System.out.println("Opcion Invalida o Cliente no Encontrado");
                 break;
 
         }
-
     }
     public static void menu() {
         System.out.println("----------------------MENU---------------------------");
@@ -100,6 +92,9 @@ public class Main {
                     break;
                 case 2:
                     Cuenta deposito = new Cuenta();
+                    System.out.println("Que tipo de deposito desea realizar");
+                    System.out.println("Cuenta Propia");
+                    System.out.println("Cuenta Aparte");
                     System.out.println("Ingrese el numero de cuenta del destinatario");
                     dest = lector.next();
                     System.out.println("Ingrese el nombre del depositante");
@@ -112,7 +107,7 @@ public class Main {
                         deposito.Depositar(mont, deposito.buscarcuenta(dest));
                         System.out.println("Transaccion Exitosa!");
                         System.out.println("---------Depositante-------Cuenta Receptor--------Nombre Receptor---------Deposito-----");
-                        System.out.println("          "+ nombredepositente+"              "+dest+ "             "+ Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre()+"          "+mont);
+                        System.out.println("            "+ nombredepositente+"              "+dest+ "             "+ Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre()+"          "+mont);
                         menu();
                         opcion = lector.nextInt();
                     } else {
@@ -140,7 +135,7 @@ public class Main {
                     opcion = lector.nextInt();
                     break;
                 case 4:
-                    System.out.println("---''''Cuenta---    ----Cliente----     ----Balance-----");
+                    System.out.println("---Cuenta---    ----Cliente----     ----Balance-----");
                     Cuenta mostrar = new Cuenta();
                     System.out.println(mostrar());
                     Cliente.mostrarcliente();
@@ -150,7 +145,6 @@ public class Main {
                 case 5:
                     condicion = FALSE;
                     break;
-
             }
 
         }
