@@ -8,7 +8,6 @@ import static com.delcid.Bitacora.accion;
 public class Cuenta_Largo_Plazo extends Cuenta {
 
     public  void Cuenta_Largo(Double balancea) {
-
         setBalance(balancea);
         setTipocuenta(2);
         setcuenta(getTipocuenta());

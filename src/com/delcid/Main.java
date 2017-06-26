@@ -13,6 +13,7 @@ import static java.lang.Boolean.TRUE;
 import static com.delcid.Bitacora.accion;
 
 public class Main {
+
     public static int opcion;
     public static boolean condicion = TRUE;
 
@@ -23,7 +24,7 @@ public class Main {
             opcionswitch = 3;
         } else {
             System.out.println("Tipo De Cuenta");
-            System.out.println("1. Cuenta Normal--");
+            System.out.println("1.''' Cuenta Normal--");
             System.out.println("2. Cuenta A largo Plazo");
         }
         if (condicion == 1 || (condicion == 2 && buscar.posicionclienteid(id) > -1)) opcionswitch = lector.nextInt();
@@ -32,7 +33,7 @@ public class Main {
                 System.out.println("Ingrese la cantidad de apertura");
                 Cuenta_Normal nuevanormal = new Cuenta_Normal(lector.nextDouble());
                 nuevanormal.setId(id);
-                nuevanormal.guardard(nuevanormal);
+                nuevanormal.guardar(nuevanormal);
                 break;
             case 2:
                 System.out.println("Ingrese la cantidad de apertura");
@@ -48,7 +49,6 @@ public class Main {
         }
 
     }
-
     public static void menu() {
         System.out.println("----------------------MENU---------------------------");
         System.out.println("1---------------Agregar Cuentas----------------------");
@@ -67,7 +67,6 @@ public class Main {
         Double mont;
         String nombredepositente;
         Scanner lector = new Scanner(System.in);
-        java.util.Date fecha = new Date();
         menu();
         opcion = lector.nextInt();
         while (condicion == TRUE) {
@@ -103,7 +102,7 @@ public class Main {
                     Cuenta deposito = new Cuenta();
                     System.out.println("Ingrese el numero de cuenta del destinatario");
                     dest = lector.next();
-                    System.out.println("Ingrese el nombre ...");
+                    System.out.println("Ingrese el nombre del depositante");
                     nombredepositente = lector.next();
                     System.out.println(deposito.buscarcuenta(dest));
                     if (deposito.buscarcuenta(dest) > -1) {
@@ -113,11 +112,11 @@ public class Main {
                         deposito.Depositar(mont, deposito.buscarcuenta(dest));
                         System.out.println("Transaccion Exitosa!");
                         System.out.println("---------Depositante-------Cuenta Receptor--------Nombre Receptor---------Deposito-----");
-                        System.out.println("   " + nombredepositente + "                " + dest + "      " + Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre() + "        " + mont);
+                        System.out.println("          "+ nombredepositente+"              "+dest+ "             "+ Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre()+"          "+mont);
                         menu();
                         opcion = lector.nextInt();
                     } else {
-                        System.out.println("Esta Cuenta no existe intenta de nuevo ");
+                        System.out.println("Esta Cuenta no existe intenta de nuevo porfavor ");
                         opcion = 3;
                     }
                     break;
@@ -141,7 +140,7 @@ public class Main {
                     opcion = lector.nextInt();
                     break;
                 case 4:
-                    System.out.println("---Cuenta---    ----Cliente----     ----Balance-----");
+                    System.out.println("---''''Cuenta---    ----Cliente----     ----Balance-----");
                     Cuenta mostrar = new Cuenta();
                     System.out.println(mostrar());
                     Cliente.mostrarcliente();

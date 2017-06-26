@@ -8,9 +8,6 @@ import java.util.GregorianCalendar;
 
 import static com.delcid.Bitacora.accion;
 
-/**
- * Created by NEHEMIAS on 21/06/2017.
- */
 public class Cliente {
     private String nombre;
     private String id;

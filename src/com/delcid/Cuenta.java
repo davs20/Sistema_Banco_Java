@@ -4,10 +4,6 @@ import java.util.*;
 
 import static com.delcid.Bitacora.accion;
 
-/**
- * Created by NEHEMIAS on 21/06/2017.
- */
-
 public class Cuenta {
     //private static com.delcid.Cuenta Cuenta;
     Random rnd = new Random();
@@ -40,7 +36,8 @@ public class Cuenta {
 
     protected void setcuenta(int tipocuenta) {
         Calendar fechasetcuenta = new GregorianCalendar();
-        Cuenta = fechasetcuenta.get(Calendar.DAY_OF_MONTH) + "-" + fechasetcuenta.get(Calendar.MONTH) + "-" + fechasetcuenta.get(Calendar.YEAR) + "-" + rnd.nextInt(54456) + "-" + tipocuenta;
+        int sumames = fechasetcuenta.get(Calendar.MONTH) + 1;
+        this.Cuenta = fechasetcuenta.get(Calendar.DAY_OF_MONTH) + "-" + sumames + "-" + fechasetcuenta.get(Calendar.YEAR) + "-" + rnd.nextInt(54456) + "-" + tipocuenta;
         accion += " Creacion de la  Cuenta " + Cuenta + fechasetcuenta.get(Calendar.DAY_OF_MONTH) + "/" + fechasetcuenta.get(Calendar.MONTH) + "/" + fechasetcuenta.get(Calendar.YEAR) + " " + fechasetcuenta.get(Calendar.HOUR_OF_DAY) + ":" + fechasetcuenta.get(Calendar.MINUTE) + "\n";
 
     }
@@ -79,7 +76,7 @@ public class Cuenta {
         Cliente.cuenta.get(posicion).setBalance(a - ret);
     }
 
-    public  int buscarcuenta(String numerocuenta) {
+    public int buscarcuenta(String numerocuenta) {
         Calendar fechabusqueda = new GregorianCalendar();
         setPosicion(-1);
         if (Cliente.cuenta.size() > 0) {
