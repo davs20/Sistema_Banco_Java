@@ -7,12 +7,12 @@ import java.util.GregorianCalendar;
 import static com.delcid.Bitacora.accion;
 public class Cuenta_Largo_Plazo extends Cuenta {
 
-    public  void Cuenta_Largo(Double balancea) {
+    public void Cuenta_Largo(Double balancea) {
         setBalance(balancea);
         setTipocuenta(2);
         setcuenta(getTipocuenta());
     }
-    public   void guardar(Cuenta_Largo_Plazo cuenta_largo_plazo) {
+    public  void guardar(Cuenta_Largo_Plazo cuenta_largo_plazo) {
         Calendar fechaguardarcuentalp = new GregorianCalendar();
         accion+="Guardar Cuenta Largo plazo "+cuenta_largo_plazo.getcuenta()+"Perteneciente"+cuenta_largo_plazo.getId()+" "+ fechaguardarcuentalp .get(Calendar.DAY_OF_MONTH) + "/" + fechaguardarcuentalp.get(Calendar.MONTH) + "+" + fechaguardarcuentalp.get(Calendar.YEAR) + " " + fechaguardarcuentalp .get(Calendar.HOUR_OF_DAY) + ":" + fechaguardarcuentalp .get(Calendar.MINUTE)+"\n";
         Cliente.cuenta.add(cuenta_largo_plazo);

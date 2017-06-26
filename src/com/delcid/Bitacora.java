@@ -1,18 +1,20 @@
 package com.delcid;
+
 import java.util.ArrayList;
+
 /**
  * Created by NEHEMIAS on 21/06/2017.
  */
 public class Bitacora {
     private int numero;
-    public static String accion="";
+    public static String accion = "";
     private String usuario;
     private String accion1;
     private String fecha;
     private String id;
     private String cuenta;
-    private Double  Balance;
-    public static ArrayList<Bitacora> bitacoras =new ArrayList<>();
+    private Double Balance;
+    public static ArrayList<Bitacora> bitacoras = new ArrayList<>();
 
     public String getUsuario() {
         return usuario;
@@ -62,7 +64,14 @@ public class Bitacora {
         Balance = balance;
     }
 
-    public void guardarbitacira(Bitacora bitacoras){
+
+    public void guardarbitacira(Bitacora bitacoras) {
         this.bitacoras.add(bitacoras);
+    }
+
+    public static void mostrarbitacora() {
+        for (int b = 0; b < Cliente.cuenta.size(); b++) {
+            System.out.println("      "+Bitacora.bitacoras.get(b).getAccion1()+"      "+Bitacora.bitacoras.get(b).getCuenta()+"      "+Bitacora.bitacoras.get(b).getFecha());
+        }
     }
 }

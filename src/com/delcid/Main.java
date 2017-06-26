@@ -1,10 +1,12 @@
 package com.delcid;
+
 import java.util.Scanner;
+
 import static com.delcid.Cuenta.*;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
-public class Main {
 
+public class Main {
     public static int opcion;
     public static boolean condicion = TRUE;
 
@@ -38,9 +40,9 @@ public class Main {
             default:
                 System.out.println("Opcion Invalida o Cliente no Encontrado");
                 break;
-
         }
     }
+
     public static void menu() {
         System.out.println("----------------------MENU---------------------------");
         System.out.println("1---------------Agregar Cuentas----------------------");
@@ -79,12 +81,12 @@ public class Main {
                             System.out.println("Ingrese el Numero de Identidad");
                             nuevo_cliente.setId(lector.next());
                             nuevo_cliente.guardar_cliente(nuevo_cliente);
-                            condicionnuevacuenta(lector, nuevo_cliente.getId(), 1);
+                            condicionnuevacuenta(lector, nuevo_cliente.getId(), opcioncuentas);
                             break;
                         case 2:
                             System.out.println("Ingrese el numero de indentidad");
                             String ida = lector.next();
-                            condicionnuevacuenta(lector, ida, 2);
+                            condicionnuevacuenta(lector, ida, opcioncuentas);
                             break;
                     }
                     menu();
@@ -107,7 +109,7 @@ public class Main {
                         deposito.Depositar(mont, deposito.buscarcuenta(dest));
                         System.out.println("Transaccion Exitosa!");
                         System.out.println("---------Depositante-------Cuenta Receptor--------Nombre Receptor---------Deposito-----");
-                        System.out.println("            "+ nombredepositente+"              "+dest+ "             "+ Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre()+"          "+mont);
+                        System.out.println("            " + nombredepositente + "              " + dest + "             " + Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre() + "          " + mont);
                         menu();
                         opcion = lector.nextInt();
                     } else {
@@ -135,10 +137,8 @@ public class Main {
                     opcion = lector.nextInt();
                     break;
                 case 4:
-                    System.out.println("---Cuenta---    ----Cliente----     ----Balance-----");
-                    Cuenta mostrar = new Cuenta();
-                    System.out.println(mostrar());
-                    Cliente.mostrarcliente();
+                    System.out.println("------------------Bitacoras------------------");
+                    Bitacora.mostrarbitacora();
                     menu();
                     opcion = lector.nextInt();
                     break;
@@ -146,7 +146,6 @@ public class Main {
                     condicion = FALSE;
                     break;
             }
-
         }
     }
 }
