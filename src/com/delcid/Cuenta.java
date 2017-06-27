@@ -9,7 +9,7 @@ public class Cuenta {
     public static Double porcentaje_retiro;
     protected double monto;
     static public ArrayList<Cuenta> cuenta = new ArrayList<>();
-    protected int posicion;
+    public int posicion;
     private String Cuenta;
     protected int tipocuenta;
     private String id;
@@ -73,9 +73,8 @@ public class Cuenta {
         int sumames = Fecha.get(Calendar.MONTH) + 1;
         double a = Cliente.cuenta.get(posicion).getBalance();
         accion += "Retirar de Cuenta  " + Cliente.cuenta.get(posicion).getcuenta() + "Cantidad  " + ret + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + sumames + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
-        ;
         Cliente.cuenta.get(posicion).setBalance(a - ret);
-
+        System.out.println("Su efectivo es :"+ret);
     }
 
     public int buscarcuenta(String numerocuenta) {
@@ -127,7 +126,7 @@ public class Cuenta {
         return Cliente.cuenta.get(re).getTipocuenta();
     }
 
-    public static void mostrarceuntaindividual(Cuenta cuenta) {
+    public static void mostrarcuentaindividual(Cuenta cuenta) {
         Calendar fechabusqueda = new GregorianCalendar();
         int suma = fechabusqueda.get(Calendar.MONTH) + 1;
         accion+="Mostrar Cuenta :"+cuenta.getcuenta()+" Perteneciente a "+cuenta.getId()+ " "+ fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + suma + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
@@ -136,13 +135,13 @@ public class Cuenta {
         System.out.println(cuenta.getcuenta() + "     " + cuenta.getId() + "      " + cuenta.getBalance());
     }
 
-    public static void mostrarceuntaindividual(int posicion) {
+    public static void mostrarcuentaindividual(int posicion) {
         Calendar fechabusqueda = new GregorianCalendar();
         int suma = fechabusqueda.get(Calendar.MONTH) + 1;
        accion+="Mostrar Cuenta :"+Cliente.cuenta.get(posicion).getcuenta()+" Perteneciente a "+Cliente.cuenta.get(posicion).getId()+fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + suma + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
         System.out.println("Transaccion Exitosa!");
         System.out.println("---Cuenta---    ----Cliente----     ----Balance-----");
-        System.out.println(Cliente.cuenta.get(posicion) + "     " + Cliente.cuenta.get(posicion) + "      " + Cliente.cuenta.get(posicion).getBalance());
+        System.out.println(Cliente.cuenta.get(posicion).getcuenta() + "     " + Cliente.cuenta.get(posicion).getId() + "      " + Cliente.cuenta.get(posicion).getBalance());
     }
 }
 

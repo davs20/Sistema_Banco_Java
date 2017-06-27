@@ -30,11 +30,11 @@ public class Cliente {
         return id;
     }
 
-    public int getPosicion() {
+    private int getPosicion() {
         return posicion;
     }
 
-    public void setPosicion(int posicion) {
+    private void setPosicion(int posicion) {
         this.posicion = posicion;
     }
 

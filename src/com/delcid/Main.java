@@ -26,7 +26,7 @@ public class Main {
                 Cuenta_Normal nuevanormal = new Cuenta_Normal(lector.nextDouble());
                 nuevanormal.setId(id);
                 nuevanormal.guardar(nuevanormal);
-                Cuenta.mostrarceuntaindividual(nuevanormal);
+                Cuenta.mostrarcuentaindividual(nuevanormal);
                 break;
             case 2:
                 System.out.println("Ingrese la cantidad de apertura");
@@ -34,7 +34,7 @@ public class Main {
                 nuevalargoplazo.Cuenta_Largo(lector.nextDouble());
                 nuevalargoplazo.setId(id);
                 nuevalargoplazo.guardar(nuevalargoplazo);
-                Cuenta.mostrarceuntaindividual(nuevalargoplazo);
+                Cuenta.mostrarcuentaindividual(nuevalargoplazo);
                 break;
             default:
                 System.out.println("Opcion Invalida o Cliente no Encontrado");
@@ -125,7 +125,7 @@ public class Main {
                             String depid = lector.next();
                             if (deposito.buscarcuentaid(dest, depid) > -1) {
                                 deposito.Depositar(mont, deposito.buscarcuenta(dest));
-                                Cuenta.mostrarceuntaindividual(deposito.buscarcuentaid(dest,depid));
+                                Cuenta.mostrarcuentaindividual(deposito.buscarcuentaid(dest,depid));
                                 System.out.println();
                             }
 
@@ -166,6 +166,7 @@ public class Main {
                         } else if (retiro.buscartipo(dest) == 1) {
                             retiro.Retirar(mont, retiro.buscarcuentaid(dest, id));
                         }
+                        Cuenta.mostrarcuentaindividual(retiro.buscarcuentaid(dest,id));
                         menu();
                         opcion = lector.nextInt();
                     }

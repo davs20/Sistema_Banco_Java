@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import static com.delcid.Bitacora.accion;
-import static com.delcid.Bitacora.bitacoras;
 import static jdk.nashorn.internal.objects.NativeMath.random;
 
 /**

@@ -23,5 +23,6 @@ public class Cuenta_Largo_Plazo extends Cuenta {
         accion += "Retirar de la cuenta" + Cliente.cuenta.get(posicion).getcuenta() + " " + Cliente.cuenta.get(posicion).getcuenta() + " " + fecharetirar.get(Calendar.DAY_OF_MONTH) + "/" + fecharetirar.get(Calendar.MONTH) + "/" + fecharetirar.get(Calendar.YEAR) + " " + fecharetirar.get(Calendar.HOUR_OF_DAY) + ":" + fecharetirar.get(Calendar.MINUTE) + "\n";
         double a = Cliente.cuenta.get(posicion).getBalance();
         Cliente.cuenta.get(posicion).setBalance(a - ret*1.10);
+        System.out.println("Su Efectivo es :"+ret*0.90);
     }
 }
