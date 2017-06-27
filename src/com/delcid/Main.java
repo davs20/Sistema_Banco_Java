@@ -62,6 +62,7 @@ public class Main {
         String dest;
         String id;
         int opcion;
+        int opciondep;
         int opcioncuentas;
         Double mont;
         String nombredepositente;
@@ -103,38 +104,53 @@ public class Main {
                     break;
                 case 2:
                     Cuenta deposito = new Cuenta();
-                    System.out.println("Ingrese el numero de cuenta del destinatario");
+                    System.out.println("1. Deposito en Cuenta Propia");
+                    System.out.println("2. Deposito en Cuenta Aparte");
+                    opciondep = lector.nextInt();
+                    System.out.println("Ingrese el numero de cuenta");
                     dest = lector.next();
                     if (deposito.buscarcuenta(dest) > -1) {
                         Cliente busquedacliente = new Cliente();
-                        System.out.println("Ingrese el nombre del depositante");
-                        nombredepositente = lector.next();
                         System.out.println("Ingrese el Monto a Depositar");
                         mont = lector.nextDouble();
-                        deposito.Depositar(mont, deposito.buscarcuenta(dest));
-                        System.out.println("Transaccion Exitosa!");
-                        System.out.println("---------Depositante-------Cuenta Receptor--------Nombre Receptor---------Deposito-----");
-                        System.out.println("            " + nombredepositente + "              " + dest + "             " + Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre() + "          " + mont);
+                        if (opciondep == 2) {
+                            System.out.println("Ingrese el nombre del depositante");
+                            nombredepositente = lector.next();
+                            deposito.Depositar(mont, deposito.buscarcuenta(dest));
+                            System.out.println("Transaccion Exitosa!");
+                            System.out.println("---------Depositante-------Cuenta Receptor--------Nombre Receptor---------Deposito-----");
+                            System.out.println("            " + nombredepositente + "              " + dest + "             " + Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre() + "          " + mont);
+                        } else if (opciondep == 1) {
+                            System.out.println("Ingrese el ID del Depositante");
+                            String depid=lector.next();
+                            if (deposito.buscarcuentaid(dest,depid) > -1) {
+                                deposito.Depositar(mont, deposito.buscarcuenta(dest));
+                                Cuenta.mostrarceuntaindividual(dest,depid,deposito);
+                                System.out.println();
+                            }
+
+                        }
+
                         menu();
                         opcion = lector.nextInt();
                     } else {
                         System.out.println("El numero de Cuenta no Exite en el sistema");
                         volveralmenuprincipal();
-                        if (lector.nextInt() == 2){
+                        if (lector.nextInt() == 2) {
                             menu();
                             opcion = lector.nextInt();
                         }
-
                     }
                     break;
                 case 3:
+
                     Cuenta retiro = new Cuenta();
                     System.out.println("Ingrese el numero de cuenta");
                     dest = lector.next();
                     if (retiro.buscarcuenta(dest) == -1) {
                         System.out.println("El numero de cuenta que has ingresado no existe");
                         volveralmenuprincipal();
-                        if (lector.nextInt() == 2){
+                        if (lector.nextInt() == 2) {
                             menu();
                             opcion = lector.nextInt();
                         }
@@ -154,17 +170,10 @@ public class Main {
                         menu();
                         opcion = lector.nextInt();
                     }
-
                     break;
                 case 4:
-                    if (Cliente.registro.size() > 0) {
-                        System.out.println("No hay Ninguna Operacion Realizada");
-                        volveralmenuprincipal();
-                    } else {
-                        System.out.println("------------------Bitacoras------------------");
-                        System.out.println(Cuenta.mostrar());
-                        menu();
-                    }
+                    System.out.println(Bitacora.accion);
+                    menu();
                     opcion = lector.nextInt();
                     break;
                 case 5:

@@ -21,9 +21,9 @@ public class Cuenta_Normal extends Cuenta {
     }
 
     public void guardar(Cuenta_Normal cuenta) {
-        Bitacora guardaraccion = new Bitacora();
         Calendar fechaguardarcuentaN = new GregorianCalendar();
-        accion += "Guardar Cuenta Normal " + cuenta.getcuenta() + "Perteneciente" + cuenta.getId() + " " + fechaguardarcuentaN.get(Calendar.DAY_OF_MONTH) + "/" + fechaguardarcuentaN.get(Calendar.MONTH) + "+" + fechaguardarcuentaN.get(Calendar.YEAR) + " " + fechaguardarcuentaN.get(Calendar.HOUR_OF_DAY) + ":" + fechaguardarcuentaN.get(Calendar.MINUTE) + "\n";
+        int suma=fechaguardarcuentaN.get(Calendar.MONTH)+1;
+        accion += "Guardar Cuenta Normal " + cuenta.getcuenta() + "  Perteneciente a  " + cuenta.getId() + " " + fechaguardarcuentaN.get(Calendar.DAY_OF_MONTH) + "/" + suma + "/" + fechaguardarcuentaN.get(Calendar.YEAR) + " " + fechaguardarcuentaN.get(Calendar.HOUR_OF_DAY) + ":" + fechaguardarcuentaN.get(Calendar.MINUTE) + "\n";
         Cliente.cuenta.add(cuenta);
     }
 

@@ -14,7 +14,8 @@ public class Cuenta_Largo_Plazo extends Cuenta {
     }
     public  void guardar(Cuenta_Largo_Plazo cuenta_largo_plazo) {
         Calendar fechaguardarcuentalp = new GregorianCalendar();
-        accion+="Guardar Cuenta Largo plazo "+cuenta_largo_plazo.getcuenta()+"Perteneciente"+cuenta_largo_plazo.getId()+" "+ fechaguardarcuentalp .get(Calendar.DAY_OF_MONTH) + "/" + fechaguardarcuentalp.get(Calendar.MONTH) + "+" + fechaguardarcuentalp.get(Calendar.YEAR) + " " + fechaguardarcuentalp .get(Calendar.HOUR_OF_DAY) + ":" + fechaguardarcuentalp .get(Calendar.MINUTE)+"\n";
+        int suma=fechaguardarcuentalp.get(Calendar.MONTH)+1;
+        accion+="Guardar Cuenta Largo plazo "+cuenta_largo_plazo.getcuenta()+"  Perteneciente  a "+cuenta_largo_plazo.getId()+"   "+ fechaguardarcuentalp .get(Calendar.DAY_OF_MONTH) + "/" + suma + "/" + fechaguardarcuentalp.get(Calendar.YEAR) + "   " + fechaguardarcuentalp .get(Calendar.HOUR_OF_DAY) + ":" + fechaguardarcuentalp .get(Calendar.MINUTE)+"\n";
         Cliente.cuenta.add(cuenta_largo_plazo);
     }
     public void Retirar(Double ret, int posicion) {

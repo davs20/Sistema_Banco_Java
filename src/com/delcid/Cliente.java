@@ -69,9 +69,8 @@ public class Cliente {
     public  void guardar_cliente(Cliente cliente) {
 
         Calendar fechaguardarcliente = new GregorianCalendar();
-        accion += "Guardar Cliente" + fechaguardarcliente.get(Calendar.DAY_OF_MONTH) + "/" + fechaguardarcliente.get(Calendar.MONTH) + "+" + fechaguardarcliente.get(Calendar.YEAR) + " " + fechaguardarcliente.get(Calendar.HOUR_OF_DAY) + ":" + fechaguardarcliente.get(Calendar.MINUTE) + "\n";
+        accion += "Guardar Cliente  " + fechaguardarcliente.get(Calendar.DAY_OF_MONTH) + "/" + fechaguardarcliente.get(Calendar.MONTH) + "/" + fechaguardarcliente.get(Calendar.YEAR) + " " + fechaguardarcliente.get(Calendar.HOUR_OF_DAY) + ":" + fechaguardarcliente.get(Calendar.MINUTE) + "\n";
         registro.add(cliente);
-        Bitacora bitacora = new Bitacora();
 
     }
 
@@ -81,7 +80,7 @@ public class Cliente {
         for (int a = 0; a < registro.size(); a++) {
 
             if (registro.get(a).getId().equals(buscarcliente(cuenta))) {
-                // accion += "Cliente Cuenta con numero de Cuenta " + cuenta + Cliente.registro.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
+                 accion += "Cliente Cuenta con numero de Cuenta " + cuenta + Cliente.cuenta.get(a).getcuenta() + " " + Cliente.cuenta.get(a).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + "/" + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
 
                 setPosicion(a);
                 return getPosicion();
@@ -95,7 +94,6 @@ public class Cliente {
         for (int a = 0; a < registro.size(); a++) {
 
             if (registro.get(a).getId().equals(id)) {
-                // accion += "Cliente Cuenta con numero de Cuenta " + cuenta + Cliente.registro.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
 
                 setPosicion(a);
                 return getPosicion();
@@ -110,7 +108,7 @@ public class Cliente {
         int re = -1;
         for (int i = 0; i < Cliente.cuenta.size(); i++) {
             if (Cliente.cuenta.get(i).getcuenta().equals(cuenta)) {
-                // accion += "Cliente Cuenta con numero de Cuenta " + cuenta + Cliente.cuenta.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
+                 accion += "Cliente Cuenta con numero de Cuenta " + cuenta + Cliente.cuenta.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + " " + fechamostrarcliente.get(Calendar.DAY_OF_MONTH) + "/" + fechamostrarcliente.get(Calendar.MONTH) + "/" + fechamostrarcliente.get(Calendar.YEAR) + "/" + fechamostrarcliente.get(Calendar.HOUR_OF_DAY) + ":" + fechamostrarcliente.get(Calendar.MINUTE) + "\n";
                 re = i;
                 return Cliente.cuenta.get(i).getId();
             }
@@ -121,7 +119,7 @@ public class Cliente {
     public static void mostrarcliente() {
         String cadena="";
         Calendar fechamostrarcliente = new GregorianCalendar();
-        accion += "Mostrar Clientes" + fechamostrarcliente.get(Calendar.DAY_OF_MONTH) + "/" + fechamostrarcliente.get(Calendar.MONTH) + "+" + fechamostrarcliente.get(Calendar.YEAR) + " " + fechamostrarcliente.get(Calendar.HOUR_OF_DAY) + ":" + fechamostrarcliente.get(Calendar.MINUTE) + "\n";
+        accion += "Mostrar Clientes   " + fechamostrarcliente.get(Calendar.DAY_OF_MONTH) + "/" + fechamostrarcliente.get(Calendar.MONTH) + "/" + fechamostrarcliente.get(Calendar.YEAR) + " " + fechamostrarcliente.get(Calendar.HOUR_OF_DAY) + ":" + fechamostrarcliente.get(Calendar.MINUTE) + "\n";
         for (int c=0;c<Cliente.registro.size();c++){
             cadena+=Cliente.registro.get(c).getNombre()+"\n";
         }
