@@ -56,7 +56,7 @@ public class Cuenta {
         int sumames = Fecha.get(Calendar.MONTH) + 1;
         Double ab = Cliente.cuenta.get(getPosicion()).getBalance();
         Cliente.cuenta.get(posicion).setBalance(ab + mont);
-        accion+="Depositar A Cuenta  "+Cliente.cuenta.get(posicion).getcuenta()+ "Cantidad  "+mont+"  "+ Fecha.get(Calendar.DAY_OF_MONTH) + "/" + sumames + "/" + Fecha.get(Calendar.YEAR) + " " + Fecha.get(Calendar.HOUR_OF_DAY) + ":" + Fecha.get(Calendar.MINUTE) + "\n";;
+        accion += "Depositar A Cuenta  " + Cliente.cuenta.get(posicion).getcuenta() + "Cantidad  " + mont + "  " + Fecha.get(Calendar.DAY_OF_MONTH) + "/" + sumames + "/" + Fecha.get(Calendar.YEAR) + " " + Fecha.get(Calendar.HOUR_OF_DAY) + ":" + Fecha.get(Calendar.MINUTE) + "\n";
     }
 
     protected Double getBalance() {
@@ -72,91 +72,77 @@ public class Cuenta {
         Calendar Fecha = new GregorianCalendar();
         int sumames = Fecha.get(Calendar.MONTH) + 1;
         double a = Cliente.cuenta.get(posicion).getBalance();
-        accion+="Retirar de Cuenta  "+Cliente.cuenta.get(posicion).getcuenta()+ "Cantidad  "+ret+ fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + sumames + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";;
+        accion += "Retirar de Cuenta  " + Cliente.cuenta.get(posicion).getcuenta() + "Cantidad  " + ret + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + sumames + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
+        ;
         Cliente.cuenta.get(posicion).setBalance(a - ret);
 
     }
 
     public int buscarcuenta(String numerocuenta) {
         Calendar fechabusqueda = new GregorianCalendar();
-        Bitacora newaction=new Bitacora();
+        Bitacora newaction = new Bitacora();
         setPosicion(-1);
+        int suma = fechabusqueda.get(Calendar.MONTH) + 1;
         if (Cliente.cuenta.size() > 0) {
             for (int i = 0; i < Cliente.cuenta.size(); i++) {
                 if (Cliente.cuenta.get(i).getcuenta().equals(numerocuenta)) {
                     setPosicion(i);
-                    accion += "Buscar Cuenta  " + numerocuenta + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
+                    accion += "Buscar Cuenta  " + numerocuenta + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + Cliente.cuenta.get(getPosicion()).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + suma + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
                     return getPosicion();
                 }
             }
         }
-        newaction.setCuenta(getcuenta());
-        newaction.guardarbitacira(newaction);
         return getPosicion();
 
     }
 
     public int buscarcuentaid(String numerocuenta, String id) {
         Calendar fechabusqueda = new GregorianCalendar();
-        Bitacora newaction=new Bitacora();
         setPosicion(-1);
-        int suma=fechabusqueda.get(Calendar.MONTH)+1;
-        accion += "Buscar En Sistema Cuenta   " +numerocuenta+ "  "+ id + "   " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + suma + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
+        int suma = fechabusqueda.get(Calendar.MONTH) + 1;
+        accion += "Buscar En Sistema Cuenta   " + numerocuenta + "  " + id + "   " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + suma + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
         if (Cliente.cuenta.size() > 0) {
             for (int i = 0; i < Cliente.cuenta.size(); i++) {
                 if (Cliente.cuenta.get(i).getcuenta().equals(numerocuenta) && Cliente.cuenta.get(i).getId().equals(id)) {
                     setPosicion(i);
-                    accion += "Cuenta Encontrada  " + numerocuenta + Cliente.cuenta.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + "   "+ fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
+                    accion += "Cuenta Encontrada  " + numerocuenta + Cliente.cuenta.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + "   " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
                     return getPosicion();
                 }
             }
         }
-        newaction.guardarbitacira(newaction);
         return getPosicion();
     }
 
     public int buscartipo(String numerocuenta) {
         Calendar fechabusqueda = new GregorianCalendar();
-        Bitacora newaction=new Bitacora();
+        int suma = fechabusqueda.get(Calendar.MONTH) + 1;
         int re = -1;
         for (int i = 0; i < Cliente.cuenta.size(); i++) {
             if (Cliente.cuenta.get(i).getcuenta().equals(numerocuenta)) {
-                accion += "Buscar Cuenta  " + numerocuenta + Cliente.cuenta.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getcuenta() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + fechabusqueda.get(Calendar.MONTH) + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
+                accion += "Cuenta Encontrada  " + numerocuenta + " " + "Perteneciente a  " + Cliente.cuenta.get(i).getId() + " " + fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + suma + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
                 re = i;
                 return Cliente.cuenta.get(i).getTipocuenta();
             }
         }
-        newaction.setCuenta(getcuenta());
-        newaction.guardarbitacira(newaction);
         return Cliente.cuenta.get(re).getTipocuenta();
     }
 
-
-    public static void mostrar() {
-        Calendar fechamostrar = new GregorianCalendar();
-        accion += "Mostrar Cuentas Guardadas en el Sistema" + fechamostrar.get(Calendar.DAY_OF_MONTH) + "/" + fechamostrar.get(Calendar.MONTH) + "/" + fechamostrar.get(Calendar.YEAR) + " " + fechamostrar.get(Calendar.HOUR_OF_DAY) + ":" + fechamostrar.get(Calendar.MINUTE) + "\n";
-        if (Cliente.cuenta.size() > 0) {
-            for (int i = 0; i < Cliente.cuenta.size(); i++) {
-                System.out.println(Cliente.cuenta.get(i).getcuenta() + " " + Cliente.cuenta.get(i).getId() + " " + Cliente.cuenta.get(i).balance + "\n");
-            }
-        } else {
-            System.out.println("El Arreglo esta vacio");
-        }
-    }
-
-    public static void mostrarceuntaindividual(Cuenta cuenta){
-        Bitacora newaction=new Bitacora();
-        newaction.setAccion1("Mostrada Cuenta :");
+    public static void mostrarceuntaindividual(Cuenta cuenta) {
+        Calendar fechabusqueda = new GregorianCalendar();
+        int suma = fechabusqueda.get(Calendar.MONTH) + 1;
+        accion+="Mostrar Cuenta :"+cuenta.getcuenta()+" Perteneciente a "+cuenta.getId()+ " "+ fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + suma + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
         System.out.println("Transaccion Exitosa!");
         System.out.println("---Cuenta---    ----Cliente----     ----Balance-----");
-        System.out.println(cuenta.getcuenta()+"     "+cuenta.getId()+"      "+cuenta.getBalance());
+        System.out.println(cuenta.getcuenta() + "     " + cuenta.getId() + "      " + cuenta.getBalance());
     }
-    public static void mostrarceuntaindividual(String cuenta,String id,Cuenta cuentac){
-        Bitacora newaction=new Bitacora();
-        newaction.setAccion1("Mostrada Cuenta :");
+
+    public static void mostrarceuntaindividual(int posicion) {
+        Calendar fechabusqueda = new GregorianCalendar();
+        int suma = fechabusqueda.get(Calendar.MONTH) + 1;
+       accion+="Mostrar Cuenta :"+Cliente.cuenta.get(posicion).getcuenta()+" Perteneciente a "+Cliente.cuenta.get(posicion).getId()+fechabusqueda.get(Calendar.DAY_OF_MONTH) + "/" + suma + "/" + fechabusqueda.get(Calendar.YEAR) + " " + fechabusqueda.get(Calendar.HOUR_OF_DAY) + ":" + fechabusqueda.get(Calendar.MINUTE) + "\n";
         System.out.println("Transaccion Exitosa!");
         System.out.println("---Cuenta---    ----Cliente----     ----Balance-----");
-        System.out.println(Cliente.cuenta.get(cuentac.buscarcuentaid(cuenta,id)).getcuenta()+"     "+Cliente.cuenta.get(cuentac.buscarcuentaid(cuenta,id)).getId()+"      "+Cliente.cuenta.get(cuentac.buscarcuentaid(cuenta,id)).getBalance());
+        System.out.println(Cliente.cuenta.get(posicion) + "     " + Cliente.cuenta.get(posicion) + "      " + Cliente.cuenta.get(posicion).getBalance());
     }
 }
 

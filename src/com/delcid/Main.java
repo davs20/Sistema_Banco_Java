@@ -122,10 +122,10 @@ public class Main {
                             System.out.println("            " + nombredepositente + "              " + dest + "             " + Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre() + "          " + mont);
                         } else if (opciondep == 1) {
                             System.out.println("Ingrese el ID del Depositante");
-                            String depid=lector.next();
-                            if (deposito.buscarcuentaid(dest,depid) > -1) {
+                            String depid = lector.next();
+                            if (deposito.buscarcuentaid(dest, depid) > -1) {
                                 deposito.Depositar(mont, deposito.buscarcuenta(dest));
-                                Cuenta.mostrarceuntaindividual(dest,depid,deposito);
+                                Cuenta.mostrarceuntaindividual(deposito.buscarcuentaid(dest,depid));
                                 System.out.println();
                             }
 
@@ -143,7 +143,6 @@ public class Main {
                     }
                     break;
                 case 3:
-
                     Cuenta retiro = new Cuenta();
                     System.out.println("Ingrese el numero de cuenta");
                     dest = lector.next();
