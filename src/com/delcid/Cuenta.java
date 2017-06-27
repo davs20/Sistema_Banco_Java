@@ -39,7 +39,6 @@ public class Cuenta {
         int sumames = fechasetcuenta.get(Calendar.MONTH) + 1;
         this.Cuenta = fechasetcuenta.get(Calendar.DAY_OF_MONTH) + "-" + sumames + "-" + fechasetcuenta.get(Calendar.YEAR) + "-" + rnd.nextInt(54456) + "-" + tipocuenta;
         accion += " Creacion de la  Cuenta " + Cuenta + fechasetcuenta.get(Calendar.DAY_OF_MONTH) + "/" + fechasetcuenta.get(Calendar.MONTH) + "/" + fechasetcuenta.get(Calendar.YEAR) + " " + fechasetcuenta.get(Calendar.HOUR_OF_DAY) + ":" + fechasetcuenta.get(Calendar.MINUTE) + "\n";
-
     }
 
     public int getTipocuenta() {
