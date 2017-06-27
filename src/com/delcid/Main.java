@@ -1,7 +1,5 @@
 package com.delcid;
-
 import java.util.Scanner;
-
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
@@ -64,9 +62,9 @@ public class Main {
         menu();
         opcion = lector.nextInt();
         while (condicion == TRUE) {
-            if(Cliente.cuenta.size()==0){
+            if (Cliente.cuenta.size() == 0) {
                 System.out.println("No hay Cuentas Registradas, porfavor proceda a ingresar una nueva cuenta cuentas");
-                opcion=1;
+                opcion = 1;
             }
             switch (opcion) {
                 case 1:
@@ -97,26 +95,26 @@ public class Main {
                     opcion = lector.nextInt();
                     break;
                 case 2:
-                        Cuenta deposito = new Cuenta();
-                        System.out.println("Ingrese el numero de cuenta del destinatario");
-                        dest = lector.next();
-                        System.out.println("Ingrese el nombre del depositante");
-                        nombredepositente = lector.next();
-                        System.out.println(deposito.buscarcuenta(dest));
-                        if (deposito.buscarcuenta(dest) > -1) {
-                            Cliente busquedacliente = new Cliente();
-                            System.out.println("Ingrese el Monto a Depositar");
-                            mont = lector.nextDouble();
-                            deposito.Depositar(mont, deposito.buscarcuenta(dest));
-                            System.out.println("Transaccion Exitosa!");
-                            System.out.println("---------Depositante-------Cuenta Receptor--------Nombre Receptor---------Deposito-----");
-                            System.out.println("            " + nombredepositente + "              " + dest + "             " + Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre() + "          " + mont);
-                            menu();
-                            opcion = lector.nextInt();
-                        } else {
-                            System.out.println("Esta Cuenta no existe intenta de nuevo porfavor ");
-                            opcion = 3;
-                        }
+                    Cuenta deposito = new Cuenta();
+                    System.out.println("Ingrese el numero de cuenta del destinatario");
+                    dest = lector.next();
+                    System.out.println("Ingrese el nombre del depositante");
+                    nombredepositente = lector.next();
+                    System.out.println(deposito.buscarcuenta(dest));
+                    if (deposito.buscarcuenta(dest) > -1) {
+                        Cliente busquedacliente = new Cliente();
+                        System.out.println("Ingrese el Monto a Depositar");
+                        mont = lector.nextDouble();
+                        deposito.Depositar(mont, deposito.buscarcuenta(dest));
+                        System.out.println("Transaccion Exitosa!");
+                        System.out.println("---------Depositante-------Cuenta Receptor--------Nombre Receptor---------Deposito-----");
+                        System.out.println("            " + nombredepositente + "              " + dest + "             " + Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre() + "          " + mont);
+                        menu();
+                        opcion = lector.nextInt();
+                    } else {
+                        System.out.println("Esta Cuenta no existe intenta de nuevo porfavor ");
+                        opcion = 3;
+                    }
                     break;
                 case 3:
                     Cuenta retiro = new Cuenta();
@@ -140,9 +138,7 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("------------------Bitacoras------------------");
-                    Bitacora.mostrarbitacora();
-                    menu();
-                    opcion = lector.nextInt();
+                    System.out.println(Bitacora.accion);
                     break;
                 case 5:
                     condicion = FALSE;

@@ -135,10 +135,10 @@ public class Cuenta {
             return mensaje;
         }
     }
+
     public static void mostrarceuntaindividual(Cuenta cuenta){
         System.out.println("Transaccion Exitosa!");
         System.out.println("---Cuenta---    ----Cliente----     ----Balance-----");
         System.out.println(cuenta.getcuenta()+"     "+cuenta.getId()+"      "+cuenta.getBalance());
     }
 }
-
