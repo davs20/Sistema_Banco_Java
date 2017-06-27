@@ -5,7 +5,6 @@ import java.util.Scanner;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
-
 public class Main {
     public static int opcion;
     public static boolean condicion = TRUE;
@@ -17,8 +16,8 @@ public class Main {
             opcionswitch = 3;
         } else {
             System.out.println("Tipo De Cuenta");
-            System.out.println("1.Cuenta Normal--");
-            System.out.println("2. Cuenta A largo Plazo");
+            System.out.println("1.Cuenta Normal");
+            System.out.println("2.Cuenta A largo Plazo");
         }
         if (condicion == 1 || (condicion == 2 && buscar.posicionclienteid(id) > -1)) opcionswitch = lector.nextInt();
         switch (opcionswitch) {
@@ -43,6 +42,12 @@ public class Main {
         }
     }
 
+    public static void volveralmenuprincipal() {
+        System.out.println("Desea Intentar de Nuevo ?");
+        System.out.println("1. si");
+        System.out.println("2. Volver al Menu Principal");
+    }
+
     public static void menu() {
         System.out.println("----------------------MENU---------------------------");
         System.out.println("1---------------Agregar Cuentas----------------------");
@@ -64,9 +69,9 @@ public class Main {
         menu();
         opcion = lector.nextInt();
         while (condicion == TRUE) {
-            if(Cliente.cuenta.size()==0){
-                System.out.println("No hay Cuentas Registradas, porfavor proceda a ingresar una nueva cuenta cuentas");
-                opcion=1;
+            if (Cliente.registro.size() == 0) {
+                System.out.println("No hay clientes Registrados, Agregue Cuentas a Nuevos Clientes");
+                opcion = 1;
             }
             switch (opcion) {
                 case 1:
@@ -97,51 +102,69 @@ public class Main {
                     opcion = lector.nextInt();
                     break;
                 case 2:
-                        Cuenta deposito = new Cuenta();
-                        System.out.println("Ingrese el numero de cuenta del destinatario");
-                        dest = lector.next();
+                    Cuenta deposito = new Cuenta();
+                    System.out.println("Ingrese el numero de cuenta del destinatario");
+                    dest = lector.next();
+                    if (deposito.buscarcuenta(dest) > -1) {
+                        Cliente busquedacliente = new Cliente();
                         System.out.println("Ingrese el nombre del depositante");
                         nombredepositente = lector.next();
-                        System.out.println(deposito.buscarcuenta(dest));
-                        if (deposito.buscarcuenta(dest) > -1) {
-                            Cliente busquedacliente = new Cliente();
-                            System.out.println("Ingrese el Monto a Depositar");
-                            mont = lector.nextDouble();
-                            deposito.Depositar(mont, deposito.buscarcuenta(dest));
-                            System.out.println("Transaccion Exitosa!");
-                            System.out.println("---------Depositante-------Cuenta Receptor--------Nombre Receptor---------Deposito-----");
-                            System.out.println("            " + nombredepositente + "              " + dest + "             " + Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre() + "          " + mont);
+                        System.out.println("Ingrese el Monto a Depositar");
+                        mont = lector.nextDouble();
+                        deposito.Depositar(mont, deposito.buscarcuenta(dest));
+                        System.out.println("Transaccion Exitosa!");
+                        System.out.println("---------Depositante-------Cuenta Receptor--------Nombre Receptor---------Deposito-----");
+                        System.out.println("            " + nombredepositente + "              " + dest + "             " + Cliente.registro.get(busquedacliente.posicioncliente(dest)).getNombre() + "          " + mont);
+                        menu();
+                        opcion = lector.nextInt();
+                    } else {
+                        System.out.println("El numero de Cuenta no Exite en el sistema");
+                        volveralmenuprincipal();
+                        if (lector.nextInt() == 2){
                             menu();
                             opcion = lector.nextInt();
-                        } else {
-                            System.out.println("Esta Cuenta no existe intenta de nuevo porfavor ");
-                            opcion = 3;
                         }
+
+                    }
                     break;
                 case 3:
                     Cuenta retiro = new Cuenta();
                     System.out.println("Ingrese el numero de cuenta");
                     dest = lector.next();
-                    System.out.println("Ingrese el numero de identidad del Cliente");
-                    id = lector.next();
-                    System.out.println("Ingrese el Monto a Retirar");
-                    mont = lector.nextDouble();
-                    if (retiro.buscarcuentaid(dest, id) == -1) {
-                        System.out.println("El numero de cuenta que has ingresado no existe o no eres dueno de la cuenta");
-                    } else if (retiro.buscartipo(dest) == 2) {
-                        Cuenta_Largo_Plazo largo = new Cuenta_Largo_Plazo();
-                        largo.Retirar(mont, retiro.buscarcuentaid(dest, id));
-                    } else if (retiro.buscartipo(dest) == 1) {
-                        retiro.Retirar(mont, retiro.buscarcuentaid(dest, id));
+                    if (retiro.buscarcuenta(dest) == -1) {
+                        System.out.println("El numero de cuenta que has ingresado no existe");
+                        volveralmenuprincipal();
+                        if (lector.nextInt() == 2){
+                            menu();
+                            opcion = lector.nextInt();
+                        }
+                    } else {
+                        System.out.println("Ingrese el numero de identidad del Cliente");
+                        id = lector.next();
+                        System.out.println("Ingrese el Monto a Retirar");
+                        mont = lector.nextDouble();
+                        if (retiro.buscarcuentaid(dest, id) == -1) {
+                            System.out.println("El numero de indentidad ingresado no le pertence a ningun cliente");
+                        } else if (retiro.buscartipo(dest) == 2) {
+                            Cuenta_Largo_Plazo largo = new Cuenta_Largo_Plazo();
+                            largo.Retirar(mont, largo.buscarcuentaid(dest, id));
+                        } else if (retiro.buscartipo(dest) == 1) {
+                            retiro.Retirar(mont, retiro.buscarcuentaid(dest, id));
+                        }
+                        menu();
+                        opcion = lector.nextInt();
                     }
-                    menu();
-                    opcion = lector.nextInt();
 
                     break;
                 case 4:
-                    System.out.println("------------------Bitacoras------------------");
-                    Bitacora.mostrarbitacora();
-                    menu();
+                    if (Cliente.registro.size() > 0) {
+                        System.out.println("No hay Ninguna Operacion Realizada");
+                        volveralmenuprincipal();
+                    } else {
+                        System.out.println("------------------Bitacoras------------------");
+                        System.out.println(Cuenta.mostrar());
+                        menu();
+                    }
                     opcion = lector.nextInt();
                     break;
                 case 5:
