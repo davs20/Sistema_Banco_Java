@@ -21,8 +21,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/delcid/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="139" column="26" lean-forward="true" selection-start-line="139" selection-start-column="26" selection-end-line="139" selection-end-column="26" />
+            <state relative-caret-position="259">
+              <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -546,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498525422634</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Cambios en la condicion general correcciones">
+      <created>1498525947807</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1498525947807</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -663,7 +670,8 @@
     <MESSAGE value="modulo depositar correjido ahora se ve el nombre del depositante y los datos del que recibe el dinero." />
     <MESSAGE value="Condicion para arraylist, antes de retirar o depositar" />
     <MESSAGE value="Bitacora sin Arraylist" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bitacora sin Arraylist" />
+    <MESSAGE value="Cambios en la condicion general correcciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios en la condicion general correcciones" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1238,8 +1246,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/delcid/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="139" column="26" lean-forward="true" selection-start-line="139" selection-start-column="26" selection-end-line="139" selection-end-column="26" />
+        <state relative-caret-position="259">
+          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
